@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
+const bcrypt = require("bcryptjs")
 
 const app = express();
 dotenv.config();
@@ -9,7 +10,7 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 
 mongoose.connect(
-    "mongodb+srv://kalyug210:shivam@cluster0.wawzjta.mongodb.net/RegisterationForm",
+    process.env.MONGO_URI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -58,7 +59,6 @@ app.post("/register", async (req, res) => {
     const { firstName, lastName, password, email, mobile, address } = req.body;
 
     try {
-        // Check if the email or mobile number already exists
         const existingUser = await Registration.findOne({ $or: [{ email }, { mobile }] });
 
         if (existingUser) {
@@ -69,15 +69,15 @@ app.post("/register", async (req, res) => {
             if (existingUser.mobile === mobile) {
                 errorMessage = errorMessage ? errorMessage + ' Mobile number is already registered.' : 'Mobile number is already registered.';
             }
-            // Send error message to the front end
             return res.status(400).json({ error: errorMessage });
         }
 
-        // Create a new registration
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         const registrationData = new Registration({
             firstName,
             lastName,
-            password,
+            password: hashedPassword, 
             email,
             mobile,
             address,
@@ -90,6 +90,7 @@ app.post("/register", async (req, res) => {
         res.redirect("/error");
     }
 });
+
 
 app.get("/success", (req, res) => {
     res.sendFile(__dirname + "/basics/success.html");

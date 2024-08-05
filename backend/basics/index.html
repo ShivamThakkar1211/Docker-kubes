@@ -78,7 +78,7 @@
                     window.location.href = "/success";
                 } else {
                     const result = await response.json();
-                    alert(result.error); // Display server-side error message
+                    alert(result.error);
                 }
             } catch (error) {
                 console.error("Error submitting form:", error);
@@ -88,7 +88,6 @@
     
         document.getElementById("form").addEventListener("submit", submitForm);
     
-        // Input validation (for immediate feedback)
         function showError(elementId, message) {
             document.getElementById(elementId).textContent = message;
         }
