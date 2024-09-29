@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetCode Stats</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-two">
+      <div class="logo"><img src="./images/leetcode.png" alt="LeetCode Logo" /></div>
+      <div class="logo-name">LeetCode Stats</div>
+      <link rel="stylesheet" href="stylee.css">
+    </div>
+
+    <div class="spinner" id="spinner"></div>
+
+    <div class="para" id="stats" style="display: none;">
+      <p>Total Solved: <span id="totalSolved"></span></p>
+      <p>Total Questions: <span id="totalQuestions"></span></p>
+      <p>Acceptance Rate: <span id="acceptanceRate"></span></p>
+      <p>Easy Questions Solved: <span id="easySolved"></span></p>
+      <p>Medium Questions Solved: <span id="mediumSolved"></span></p>
+      <p>Hard Questions Solved: <span id="hardSolved"></span></p>
+    </div>
+
+    <h1 class="home"><a href="/">Back to Home</a></h1>
+
+    <script>
+      const fetchLeetCodeData = async () => {
+        const username = "shivamrsnr990"; // Your LeetCode username
+        const spinner = document.getElementById("spinner");
+        const stats = document.getElementById("stats");
+
+        // Show the spinner and hide stats
+        spinner.style.display = "block";
+        stats.style.display = "none";
+
+        try {
+          const response = await fetch(`/leetcode/${username}`);
+          const data = await response.json();
+
+          console.log(data); // Log the full response
+
+          document.getElementById("totalSolved").textContent =
+            data.totalSolved || "N/A";
+          document.getElementById("totalQuestions").textContent =
+            data.totalQuestions || "N/A";
+          document.getElementById("acceptanceRate").textContent =
+            data.acceptanceRate || "N/A"; // Check if this key exists
+          document.getElementById("easySolved").textContent =
+            data.easySolved || "N/A"; // Check if this key exists
+          document.getElementById("mediumSolved").textContent =
+            data.mediumSolved || "N/A"; // Check if this key exists
+          document.getElementById("hardSolved").textContent =
+            data.hardSolved || "N/A"; // Check if this key exists
+        } catch (error) {
+          console.error("Error fetching LeetCode data:", error);
+        } finally {
+          // Hide the spinner and show stats
+          spinner.style.display = "none";
+          stats.style.display = "block";
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", fetchLeetCodeData);
+    </script>
+  </body>
+</html>

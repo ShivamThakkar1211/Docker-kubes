@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shivam's Portfolio</title>
+    <script
+      src="https://kit.fontawesome.com/a196237053.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="stylee.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+          <ul id="leet">
+            <li><a href="/leetcode">My Leetcode</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <p>Full Stack Web Developer</p>
+          <h1>
+            Hi, I'm <span>Shivam Thakkar</span> <br />
+            from Chandigarh University
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- ------------about-------------- -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <!-- <img src="images/shivam.jpg" /> -->
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About me</h1>
+            <p>
+              I'm a first-year student at Chandigarh University who is currently
+              pursuing a Bachelor's in Computer Science with a specialization in DevOps.
+            </p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('Experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('Education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>UI</span><br />Designing Web/App interface (Beginner)
+                </li>
+                <li>
+                  <span>Frontend Web Development</span><br />HTML5, CSS3, JS
+                </li>
+                <li><span>Languages</span><br />C, C++</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="Experience">
+              <ul>
+                <li><span>No Experience Yet</span><br /></li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="Education">
+              <ul>
+                <li>
+                  <span>Schooling</span><br />Kendriya Vidyalaya (Raisinghnagar)
+                </li>
+                <li>
+                  <span>College</span><br />Pursuing Undergraduate at Chandigarh
+                  University
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------------services------------------ -->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="service-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p></p>
+          </div>
+          <div>
+            <i class="fa-sharp fa-solid fa-crop"></i>
+            <h2>UI/UX Design</h2>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ---------portfolio----- -->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png" />
+            <div class="layer">
+              <h3>Portfolio</h3>
+              <p>This portfolio is my first project</p>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>Music App using Figma</h3>
+              <p>My first Figma Music App Design</p>
+              <a
+                href="https://www.figma.com/proto/Qa7DA9aC9ywfMlzMuXYZvD/Untitled?node-id=1-3&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A3&show-proto-sidebar=1"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.png" />
+            <div class="layer">
+              <h3>UI App</h3>
+              <p>Still Under Construction</p>
+              <a href="#"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">Soon I'll upload more of my projects</a>
+      </div>
+    </div>
+
+    <!-- ---------------contact------------- -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>
+              <i class="fa-solid fa-paper-plane"></i>shivamrsnt990@gmail.com
+            </p>
+            <p><i class="fa-solid fa-phone"></i>7413094031</p>
+            <div class="social-icons">
+              <a target="_blank" href="https://www.linkedin.com/in/shivam-thakkar-3b5b2a249"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </div>
+            <div class="social-icons">
+              <a
+              target="_blank"
+                href="https://twitter.com/Shivamthakkar27?t=WvK9jyMu_xq6Yq1OwYNDOw&s=08"
+                ><i class="fa-brands fa-square-twitter"></i
+              ></a>
+            </div>
+            <div class="social-icons">
+              <a
+              target="_blank"
+                href="https://instagram.com/shivam_thakkar____?igshid=ZDdkNTZiNTM="
+                ><i class="fa-brands fa-square-instagram"></i
+              ></a>
+            </div>
+            <div class="social-icons">
+              <a target="_blank" href="https://github.com/ShivamThakkar1211"
+                ><i class="fa-brands fa-square-github"></i
+              ></a>
+            </div>
+            <a target="_blank" href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+          </div>
+          <div class="contact-right">
+            <form
+              name="submit-to-google-sheet"
+              action="/contact"
+              method="POST"
+              id="contactForm"
+            >
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="message"
+                rows="6"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&#169; Shivam Thakkar, all rights reserved</p>
+      </div>
+    </div>
+    <script>
+      const form = document.getElementById("contactForm");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch("/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          const result = await response.json();
+          document.getElementById("msg").textContent = result.message;
+          form.reset();
+        } catch (error) {
+          console.error("Error submitting form:", error);
+          document.getElementById("msg").textContent = "Error sending message!";
+        }
+      });
+
+      function openmenu() {
+        document.getElementById("sidemenu").style.right = "0";
+      }
+      function closemenu() {
+        document.getElementById("sidemenu").style.right = "-200px";
+      }
+      function opentab(tabName) {
+        const tabs = document.querySelectorAll(".tab-contents");
+        const tabLinks = document.querySelectorAll(".tab-links");
+        tabs.forEach((tab) => {
+          tab.classList.remove("active-tab");
+        });
+        tabLinks.forEach((link) => {
+          link.classList.remove("active-link");
+        });
+        document.getElementById(tabName).classList.add("active-tab");
+        document.querySelector(`.tab-links[onclick="opentab('${tabName}')"]`).classList.add("active-link");
+      }
+    </script>
+  </body>
+</html>
